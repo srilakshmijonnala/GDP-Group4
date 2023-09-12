@@ -1,0 +1,57 @@
+To add bulk items to a cart in a wholesale system, you typically need a user interface and backend functionality to manage the selection and storage of items. Below are the general steps to implement a "Add to Cart" feature for bulk items in a wholesale system:
+
+Frontend (User Interface):
+
+Product Selection: Display a list of bulk items available for purchase with options for quantity and pricing per unit.
+
+Quantity Selection: Allow users to select the quantity of each bulk item they want to add to their cart. This can be done using input fields, drop-down lists, or other UI elements.
+
+Add to Cart Button: Provide an "Add to Cart" button or similar action-triggering element next to each bulk item.
+
+Cart Summary: Display a cart summary, including the list of items added, quantities, and total cost. This should update in real-time as users add items to the cart.
+
+Backend (Functionality):
+
+Data Structure: Maintain a data structure to store the contents of the user's shopping cart. This can be done using a database, session management, or other data storage methods.
+
+Add to Cart Logic: When a user clicks "Add to Cart," capture the selected bulk item, its quantity, and any other relevant information.
+
+Update Cart: If the item is already in the cart, update the quantity. If not, add it as a new item in the cart data structure.
+
+Calculate Total: Recalculate the total cost of the items in the cart whenever an item is added or its quantity is updated.
+
+Persist Data: If necessary, store the cart data between sessions so users can continue shopping later.
+
+Checkout: Implement a checkout process that allows users to review their cart, make changes if needed, and complete the purchase.
+
+Here's a simplified example in pseudo-code to illustrate the process:
+
+# Define a data structure to store the shopping cart
+cart = []
+
+# When a user adds an item to the cart
+def add_to_cart(item, quantity):
+    for existing_item in cart:
+        if existing_item['item_id'] == item['item_id']:
+            existing_item['quantity'] += quantity
+            return
+    cart.append({'item_id': item['item_id'], 'quantity': quantity, 'unit_price': item['unit_price']})
+
+# When a user wants to review their cart or check out
+def view_cart():
+    total_cost = 0
+    for item in cart:
+        total_cost += item['quantity'] * item['unit_price']
+        print(f"Item: {item['item_id']}, Quantity: {item['quantity']}, Subtotal: {item['quantity'] * item['unit_price']}")
+
+    print(f"Total Cost: {total_cost}")
+
+# Example usage
+item1 = {'item_id': 1, 'unit_price': 10}
+add_to_cart(item1, 5)
+
+item2 = {'item_id': 2, 'unit_price': 20}
+add_to_cart(item2, 3)
+
+view_cart()
+
