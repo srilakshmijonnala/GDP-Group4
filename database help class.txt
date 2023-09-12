@@ -1,0 +1,43 @@
+//Creating a DatabaseHelp class that extends SQLiteOpenHelper. This class will be responsible for creating and managing the database.
+public class DatabaseHelp extends SQLiteOpenHelper {
+    private static final String DATABASE_NAME = "StockManager.db";
+    private static final int DATABASE_VERSION = 1;
+
+    // Define table and column names
+    private static final String TABLE_CUSTOMERS = "customers";
+    private static final String COLUMN_ID = "id";
+    private static final String COLUMN_BUYER_ID = "buyer_id";
+    private static final String COLUMN_NAME = "name";
+    private static final String COLUMN_ADDRESS = "address";
+    private static final String TABLE_STOCKS = "stocks";
+    private static final String COLUMN_STOCK_ID = "stock_id";
+
+    // Create table SQL statements
+    private static final String CREATE_TABLE_CUSTOMERS = "CREATE TABLE " +
+            TABLE_CUSTOMERS + "(" +
+            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            COLUMN_BUYER_ID + " INTEGER, " +
+            COLUMN_NAME + " TEXT, " +
+            COLUMN_ADDRESS + " TEXT);";
+
+    private static final String CREATE_TABLE_STOCKS = "CREATE TABLE " +
+            TABLE_STOCKS + "(" +
+            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            COLUMN_BUYER_ID + " INTEGER, " +
+            COLUMN_STOCK_ID + " INTEGER);";
+
+    public DatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(CREATE_TABLE_CUSTOMERS);
+        db.execSQL(CREATE_TABLE_STOCKS);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Handle database schema upgrades here
+    }
+}
