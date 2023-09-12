@@ -1,0 +1,3 @@
+Project initial set up:
+
+Created the new branch and added files related to project initial setup and commited in active branch.
