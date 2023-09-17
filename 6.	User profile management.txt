@@ -1,0 +1,50 @@
+User profile management contains the following details:
+In a wholesale system, user profile management is crucial for giving users a customized experience, managing their accounts, and guaranteeing the security of their data. The following are important aspects and things to think about while establishing user profile management in a wholesale system:
+1. User Registration:
+Give users the option to register by giving them their name, email address, and password.
+2. User Authentication:
+Use a safe authentication procedure to confirm users' identities when they log in.
+3. Details about the user profile:
+Permit users to enter and edit their profile information, such as contact information, shipping addresses, and (if relevant) corporate information.
+4. The profile image:
+Give users the option to upload a profile photo or avatar to add a touch of personalization.
+5. Password Administration:
+Give users the option to safely update or reset their passwords.
+5. Password Administration:
+Give users the option to safely update or reset their passwords.
+Password complexity guidelines and encryption should be used for security.
+6. two-factor authentication
+Give users the choice to enable 2FA to increase account security.
+7. History of orders:
+Show a history of all of their previous orders, including with order information and status.
+Permit users to monitor active orders.
+8. Favorites/Wishlist:
+Permit users to bookmark items they are interested in for later use.
+9.Shopping basket:
+Between sessions, save the items in a user's shopping cart.
+Allow consumers to control the things in their cart.
+10. Alerts & Notifications:
+- Allow consumers to customize their email or in-app notification options for promotions, order updates, and critical notices.
+
+
+
+11. Individual Recommendations:
+- Use user behavior and past purchases to make personalized product recommendations
+12. Account Deactivation/Closure: 
+Give users the choice, if necessary, to deactivate or close their accounts.
+13. Security precautions
+Use security best practices, such as encryption, secure connections, and recurring security audits, to protect user data.
+14. Privacy Preferences
+Enable users to manage their privacy preferences, including who can contact them and access their profile.
+Conditional clauses:
+Make sure users agree to your terms and conditions both when registering and updating their profiles.
+15. User Assistance:
+Provide customer care channels through which consumers can get help with account-related problems.
+16.Compliance with GDPR (or applicable data regulations):
+ If necessary, seek user consent and provide alternatives for data access and deletion to ensure compliance with data protection laws, such as GDPR.
+17.Account Recovery 
+Establish a secure account recovery procedure for users who lose their passwords or experience other login problems.
+18.User Analytics
+Gather user information (with permission) in order to assess user behavior and preferences and enhance marketing tactics.
+19.Comments and evaluations:
+Enable users to comment on and rate products as well as their general experience with the wholesale system.
