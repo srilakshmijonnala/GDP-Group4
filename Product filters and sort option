@@ -1,0 +1,101 @@
+Implementaion for Product filters and sort option:
+
+Java must be used to put up a user interface (UI) and manage user interactions in order to implement product filters and sorting choices in a wholesale Android application. I'll give a simple illustration of how to start using these capabilities in an Android app down below:
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Filter Options -->
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentStart="true"
+        android:entries="@array/category_options" />
+
+    <SeekBar
+        android:id="@+id/priceSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/categorySpinner"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:max="1000" />
+
+    <!-- Product List -->
+    <ListView
+        android:id="@+id/productListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/priceSeekBar"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SeekBar;
+import android.widget.Spinner;
+
+public class MainActivity extends Activity {
+
+    private Spinner categorySpinner;
+    private SeekBar priceSeekBar;
+    private ListView productListView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        categorySpinner = findViewById(R.id.categorySpinner);
+        priceSeekBar = findViewById(R.id.priceSeekBar);
+        productListView = findViewById(R.id.productListView);
+
+        // Populate the category spinner with options from an array resource
+        ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(
+                this, R.array.category_options, android.R.layout.simple_spinner_item);
+        categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(categoryAdapter);
+
+        // Handle seek bar changes (for price filtering)
+        priceSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                // Handle price filtering based on seek bar progress
+                // Update the product list accordingly
+                filterProducts();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        // Initialize and display the product list
+        displayProducts();
+    }
+
+    // Method to filter products based on selected options
+    private void filterProducts() {
+        // Implement product filtering logic here
+        // Update the productListView adapter with filtered data
+    }
+
+    // Method to display the initial product list
+    private void displayProducts() {
+        // Implement logic to fetch and display products in productListView
+    }
+}
