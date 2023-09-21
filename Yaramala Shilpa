@@ -1,0 +1,54 @@
+Product Display
+In order to display products in an Android app for a wholesale system project, we normally need to acquire product data from a backend server or database 
+and then populate the user interface with this information. Here is a simple illustration of how to use XML for the layout and Java for the code to construct 
+an Android app layout to display products. This is a simple, basic example, and in a real project, we might have to connect networking and maybe use a database 
+to retrieve and store product data.
+
+XML Layout :
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
+
+Java Code:
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private ProductAdapter productAdapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Initialize the RecyclerView
+        recyclerView = findViewById(R.id.productRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Create dummy product data (in a real app, fetch data from a server or database)
+        List<Product> productList = new ArrayList<>();
+        productList.add(new Product("Product 1", "$10.99", "Description 1"));
+        productList.add(new Product("Product 2", "$20.49", "Description 2"));
+        // Add more products as needed
+
+        // Initialize and set the adapter
+        productAdapter = new ProductAdapter(productList);
+        recyclerView.setAdapter(productAdapter);
+    }
+}
