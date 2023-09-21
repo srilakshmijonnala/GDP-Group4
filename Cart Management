@@ -1,0 +1,77 @@
+Cart management in an Android wholesale system project involves developing a framework for item storage, allow item addition/removal, and calculating the total cost.
+Here is a sample code.The handling of user interaction for item modification and UI changes, a more complex data structure, a user-friendly cart interface, and data storage are the basic components of an useful Android wholesale system.
+
+// For items in cart
+public class CartItems {
+    private int prodId;
+    private String prodName;
+    private double price;
+    private int qty;
+
+public CartItem(int prodId, String prodName, double price, int qty) {
+        this.prodId = prodId;
+        this.prodName = prodName;
+        this.price = price;
+        this.qty = qty;
+    }
+}
+
+// For shopping cart
+public class Cart {
+    private cList<CartItems> citems;
+    public Cart() {
+        citems = new ArrayList<>();
+    }
+
+    public void addItems(int prodId, String prodName, double price, int qty) {
+        //Need to check the item already added in cart or not  
+        for (CartItem citems : citems) {
+            if (citem.getProdId() == prodId) {
+                citems.setQty(citems.getQtty() + qtty);
+                return;
+            }
+        }
+
+        // If not added, then add a new item to the cart
+        CartItem newItems = new CartItem(prodId, prodName, price, qty);
+        citems.add(newItems);
+    }
+
+    public void removeItem(int prodId) {
+        // Remove the item from the cart
+        citems.removeIf(citems -> citems.getProdId() == prodId);
+    }
+
+    public double calculateTotalPrice() {
+        double totals = 0;
+        for (CartItem citems : citems) {
+            totals += citems.getPrice() * citems.getQtty();
+        }
+        return totals;
+    }
+
+    public cList<CartItem> getItems() {
+        return citems;
+    }
+}
+
+// To handle the user's shopping cart, create an instance of the Cart class
+Cart cart = new Cart();
+
+// Add items to the cart
+cart.addItems(1, "Prod 1", 11.22, 33);
+cart.addItems(2, "Prod 2", 44.55, 66);
+
+// Remove an item from the cart
+cart.removeItem(1);
+
+// Calculate the total price 
+double totalPrice = cart.calculateTotalPrice();
+
+// Get the items in the cart
+cList<CartItem> cartItems = cart.getItems();
+
+
+
+
+
