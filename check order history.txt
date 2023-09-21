@@ -1,0 +1,57 @@
+	Check order history
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class OrderHistoryChecker {
+    public static void main(String[] args) {
+        // Replace these with your actual API endpoint and authentication details
+        String apiEndpoint = "https://api.wholesalesystem.com/orders";
+        String apiKey = "your_api_key_here";
+
+        try {
+            // Create a URL object
+            URL url = new URL(apiEndpoint);
+
+            // Open a connection to the URL
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Set the request method to GET
+            connection.setRequestMethod("GET");
+
+            // Set the request headers, including authentication
+            connection.setRequestProperty("Authorization", "Bearer " + apiKey);
+
+            // Get the response code
+            int responseCode = connection.getResponseCode();
+
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                // Read and process the response
+                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+
+                // Handle the response data as needed (e.g., parse JSON)
+                String orderHistoryData = response.toString();
+                System.out.println(orderHistoryData);
+            } else {
+                System.out.println("Error: " + responseCode + " - " + connection.getResponseMessage());
+            }
+
+            // Close the connection
+            connection.disconnect();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
