@@ -1,6 +1,5 @@
 To add bulk items to a cart in a wholesale system, you typically need a user interface and backend functionality to manage the selection and storage of items. Below are the general steps to implement a "Add to Cart" feature for bulk items in a wholesale system:
-
-Frontend (User Interface):
+front end (Functionality):
 
 Product Selection: Display a list of bulk items available for purchase with options for quantity and pricing per unit.
 
@@ -24,34 +23,6 @@ Persist Data: If necessary, store the cart data between sessions so users can co
 
 Checkout: Implement a checkout process that allows users to review their cart, make changes if needed, and complete the purchase.
 
-Here's a simplified example in pseudo-code to illustrate the process:
 
-# Define a data structure to store the shopping cart
-cart = []
 
-# When a user adds an item to the cart
-def add_to_cart(item, quantity):
-    for existing_item in cart:
-        if existing_item['item_id'] == item['item_id']:
-            existing_item['quantity'] += quantity
-            return
-    cart.append({'item_id': item['item_id'], 'quantity': quantity, 'unit_price': item['unit_price']})
-
-# When a user wants to review their cart or check out
-def view_cart():
-    total_cost = 0
-    for item in cart:
-        total_cost += item['quantity'] * item['unit_price']
-        print(f"Item: {item['item_id']}, Quantity: {item['quantity']}, Subtotal: {item['quantity'] * item['unit_price']}")
-
-    print(f"Total Cost: {total_cost}")
-
-# Example usage
-item1 = {'item_id': 1, 'unit_price': 10}
-add_to_cart(item1, 5)
-
-item2 = {'item_id': 2, 'unit_price': 20}
-add_to_cart(item2, 3)
-
-view_cart()
 
