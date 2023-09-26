@@ -1,0 +1,6 @@
+Checking order history in a wholesale system involves multiple steps, including data storage, retrieval, and presentation to users. Here are the key steps to implement order history functionality in a wholesale system:
+
+Database Design:
+
+Create a database schema or structure to store order-related data. You'll typically need tables for orders, customers, products, and possibly additional tables for order items, payment records, and shipping information.
+Define relationships between tables, such as foreign keys to link orders with customers and products.
