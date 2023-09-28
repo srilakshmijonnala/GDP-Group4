@@ -1,0 +1,4 @@
+Checking order history in a wholesale system involves multiple steps, including data storage, retrieval, and presentation to users. Here are the key steps to implement order history functionality in a wholesale system:
+Data Models:
+
+Create Java classes or objects to represent the database tables. These classes should include attributes and methods to interact with the database.
