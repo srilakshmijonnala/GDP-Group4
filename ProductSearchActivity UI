@@ -1,0 +1,54 @@
+There are various phases involved in adding a product search function to an Android wholesale application, including building a user interface for searching and viewing results, configuring data retrieval, and managing user interactions. An abridged Java code sample that shows how to implement a simple product search functionality is provided below.
+
+
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.ArrayAdapter;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ProductSearchActivity extends AppCompatActivity {
+
+    private EditText editTextSearch;
+    private Button buttonSearch;
+    private ListView listViewProducts;
+
+    // Sample list of products (you would fetch this from your data source)
+    private String[] products = {
+        "Product 1",
+        "Product 2",
+        "Product 3",
+        // Add more products here
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_product_search);
+
+        editTextSearch = findViewById(R.id.editTextSearch);
+        buttonSearch = findViewById(R.id.buttonSearch);
+        listViewProducts = findViewById(R.id.listViewProducts);
+
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, products);
+        listViewProducts.setAdapter(adapter);
+
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String query = editTextSearch.getText().toString().trim();
+
+                if (!TextUtils.isEmpty(query)) {
+                    // Filter the product list based on the search query
+                    adapter.getFilter().filter(query);
+                    listViewProducts.setVisibility(View.VISIBLE);
+                } else {
+                    listViewProducts.setVisibility(View.GONE);
+                }
+            }
+        });
+    }
+}
