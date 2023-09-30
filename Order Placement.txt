@@ -1,0 +1,5 @@
+Checking order history in a wholesale system involves multiple steps, including data storage, retrieval, and presentation to users. Here are the key steps to implement order history functionality in a wholesale system:
+Order Placement:
+
+Implement a feature to allow users to place orders. When an order is placed, insert the order details into the database.
+Order History Retrieval:
