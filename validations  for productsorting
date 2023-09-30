@@ -1,0 +1,78 @@
+
+code  for  validations product  sorting  based  on  name  or  price
+public class Product {
+    private String name;
+    private double price;
+
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    // Getters and setters
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+}
+import java.util.List;
+
+public class WholesaleSystem {
+    private List<Product> products;
+
+    public WholesaleSystem(List<Product> products) {
+        this.products = products;
+    }
+
+    public void displayProducts() {
+        if (products == null || products.isEmpty()) {
+            System.out.println("No products available.");
+        } else {
+            System.out.println("Product List:");
+            for (Product product : products) {
+                System.out.println("Name: " + product.getName() + ", Price: " + product.getPrice());
+            }
+        }
+    }
+
+    public boolean validateProduct(Product product) {
+        // Basic validation: Ensure the product has a name and a non-negative price.
+        return product != null && product.getName() != null && !product.getName().isEmpty() && product.getPrice() >= 0;
+    }
+
+    public void addProduct(Product product) {
+        if (validateProduct(product)) {
+            products.add(product);
+            System.out.println("Product added successfully.");
+        } else {
+            System.out.println("Invalid product. Please provide a valid name and non-negative price.");
+        }
+    }
+
+    public static void main(String[] args) {
+        WholesaleSystem wholesaleSystem = new WholesaleSystem(new ArrayList<>());
+
+        // Example of adding a valid product
+        Product validProduct = new Product("Widget", 19.99);
+        wholesaleSystem.addProduct(validProduct);
+
+        // Example of adding an invalid product
+        Product invalidProduct = new Product("", -5.0);
+        wholesaleSystem.addProduct(invalidProduct);
+
+        // Displaying products
+        wholesaleSystem.displayProducts();
+    }
+}
