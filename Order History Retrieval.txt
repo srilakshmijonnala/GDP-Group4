@@ -1,0 +1,5 @@
+Checking order history in a wholesale system involves multiple steps, including data storage, retrieval, and presentation to users. Here are the key steps to implement order history functionality in a wholesale system:
+Order History Retrieval:
+
+Develop methods or queries to retrieve order history data from the database. You can use SQL or an Object-Relational Mapping (ORM) framework like Hibernate or JPA to interact with the database.
+Allow users to filter and search for orders based on criteria such as customer name, order date, order status, etc.
