@@ -1,0 +1,87 @@
+<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/productimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="216dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/laptops2">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/productdesc"
+                    android:layout_width="match_parent"
+                    android:textColor="#BC000000"
+                    android:textSize="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:text="lenovo IdeaPad 3 15.6 FHD Touchscreen Laptop, Intel Core i5-1135G7 Processor, 20GB RAM, 1TB SSD, Wi-Fi 6 & Bluetooth 5,Webcam Long Battery Life, Windows 11"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/start1">
+                    </ImageView>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/start1">
+                    </ImageView>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/start1">
+                    </ImageView>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/star2">
+                    </ImageView>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/star2">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09 raking"
+                        android:textSize="25dp"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:textColor="#03A9F4"
+                        />
+
+
+
+                </LinearLayout>
+
+
+
+
+                <TextView
+                    android:id="@+id/productprice"
+                    android:layout_width="match_parent"
+                    android:textColor="#BCF81111"
+                    android:textSize="30dp"
+                    android:layout_marginVertical="10dp"
+                    android:text="643 USD"
+                    android:layout_height="wrap_content"/>
+
+
+
+            </LinearLayout>
