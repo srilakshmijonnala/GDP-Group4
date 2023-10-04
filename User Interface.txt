@@ -1,0 +1,5 @@
+Checking order history in a wholesale system involves multiple steps, including data storage, retrieval, and presentation to users. Here are the key steps to implement order history functionality in a wholesale system:
+User Interface:
+
+Create a user interface (UI) that displays order history to users. This can be a web application, desktop application, or mobile app, depending on your system's requirements.
+Design user-friendly screens that provide a summary of orders, with the ability to view order details when clicked.
