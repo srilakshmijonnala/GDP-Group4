@@ -1,0 +1,4 @@
+Checking order history in a wholesale system involves multiple steps, including data storage, retrieval, and presentation to users. Here are the key steps to implement order history functionality in a wholesale system:
+Authentication and Authorization:
+Implement user authentication and authorization to ensure that only authorized users can access order history data.
+Define user roles and permissions to control who can view, edit, or delete orders.
