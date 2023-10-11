@@ -1,0 +1,40 @@
+Process configure firebase  data  base  setup:
+step1:Add firebase ro your  project
+Launch Android Studio and select your Android project.
+Create a new project by visiting the Firebase Console at https://console.firebase.google.com.
+To add an app, click "Add App" and choose the Android icon.
+Download the google-services.json file and follow the setup instructions.
+Put the google-services.json file in your Android project's app directory.
+
+step2:add firebase  sdk  to  your app
+
+Open the build.gradle file
+implementation 'com.google.firebase:firebase-auth:22.0.0' // or the latest version
+implementation 'com.google.firebase:firebase-database:22.0.0' // or the latest version
+// Add other Firebase dependencies as needed
+Add the Google services plugin at the bottom of the file:
+apply plugin: 'com.google.gms.google-services'
+Initialize Firebase in your app:
+
+step3:initialize  fire  base  in  our  application
+Open your Application class or the main activity.
+
+Add the following code to initialize Firebase:
+import com.google.firebase.FirebaseApp;
+
+public class YourApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        FirebaseApp.initializeApp(this);
+        // Initialize other Firebase services as needed
+    }
+}
+step4:Test Firebase Integration:
+
+You can now start using Firebase services in your app. For example, to use Firebase Authentication:
+import com.google.firebase.auth.FirebaseAuth;
+
+// Inside your activity or fragment
+FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
