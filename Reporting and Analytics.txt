@@ -1,0 +1,2 @@
+Checking order history in a wholesale system involves multiple steps, including data storage, retrieval, and presentation to users. Here are the key steps to implement order history functionality in a wholesale system:
+Reporting and Analytics:Optionally, provide reporting and analytics features to generate reports and insights from order history data. This can help users make informed decisions and track business performance.
