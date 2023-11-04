@@ -1,0 +1,33 @@
+Edit Profile Page by Sarvani Pera
+Creating variables for firebase authentication and firebase store
+FirebaseFirestore fstore;
+FirebaseAuth fauth;
+
+Getting the data from the firebase and storing it in the variables
+fauth = FirebaseAuth.getInstance();
+fstore = FirebaseFirestore.getInstance();
+
+
+Setting the updated values to the attributes in the database
+FirebaseFirestore.getInstance().collection("Customers").document(FirebaseAuth.getInstance().getCurrentUser().getUid()).get().addOnSuccessListener(d -> {
+            if(d.exists()){
+                uid = d.getId();
+                username.setText(d.getString("username"));
+                phone.setText(d.getString("Phone"));
+               emaiil = d.getString("Email");
+                address.setText(d.getString("Address"));
+                password.setText(d.getString("Password"));
+                oldpass = d.getString("Password");
+                conpassword.setText(d.getString("Password"));
+            }
+        });
+
+Getting the updated values from the database
+username = findViewById(R.id.registeruname);
+        password = findViewById(R.id.registerpassword);
+        phone = findViewById(R.id.registerphone);
+        address = findViewById(R.id.registeraddress);
+        conpassword = findViewById(R.id.conregisterpassword);
+        fauth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
+        CardView register = findViewById(R.id.registerevent);
