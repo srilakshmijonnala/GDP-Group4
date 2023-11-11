@@ -1,0 +1,21 @@
+Firstly, create a firebase vairable.
+FirebaseFirestore fs;
+
+this code is used to add product details like name, brand, description, date, purchase price, sales price, quantity and category to the  Products table
+fs.collection("Products").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot d : task.getResult()) {
+                        arrlist.add(new Product(String.valueOf(d.get("Name")), String.valueOf(d.get("Brand")), d.getId(), String.valueOf(d.get("Description")), String.valueOf(d.get("Date")),Double.parseDouble(d.get("Purchase Price").toString()),Double.parseDouble(d.get("Sale Price").toString()) , Integer.parseInt(d.get("Quantity").toString()), Integer.parseInt(d.get("Category ID").toString())));
+                        rvadapter= new custproduct_list_adapter(arrlist, MainActivity.this);
+                        rv.setAdapter(rvadapter);
+                    }
+                    if(arrlist.isEmpty()){
+                        Log.e(String.valueOf(arrlist.isEmpty()), arrlist.toString());
+                        empty_view.setVisibility(View.VISIBLE);
+                    }
+                    rvadapter.notifyDataSetChanged();
+                }
+            }
+        });
