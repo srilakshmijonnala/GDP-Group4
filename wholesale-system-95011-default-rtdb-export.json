@@ -1,0 +1,57 @@
+{
+  "Customers": [
+    {
+      "Address": "New York",
+      "Email": "sudha@gmail.com",
+      "Password": "sudha@123",
+      "Phone": "1243658798",
+      "username": "sudha"
+    },
+    {
+      "Address": "Michigan",
+      "Email": "demo@gmail.com",
+      "Password": "demo@123",
+      "Phone": "88766654433",
+      "username": "sudha"
+    },
+    {
+      "Address": "Omaha",
+      "Email": "siru@gmail.com",
+      "Password": "jini@123",
+      "Phone": "99922284",
+      "username": "jini"
+    }
+  ],
+  "Products": [
+    {
+      "Brand": "Samsung",
+      "Category ID": "0",
+      "Date": "14/09/2022",
+      "Description": "Samsung is Best Mobile",
+      "Name": "Phone",
+      "Purchase Price": "90",
+      "Quantity": "2",
+      "Sale Price": "30"
+    },
+    {
+      "Brand": "Micromax",
+      "Category ID": "1",
+      "Date": "13/07/2023",
+      "Description": "Micromax is Cheap mobile",
+      "Name": "Phone",
+      "Purchase Price": "100",
+      "Quantity": "3",
+      "Sale Price": "60"
+    },
+    {
+      "Brand": "Apple",
+      "Category ID": "2",
+      "Date": "18/07/2023",
+      "Description": "Iphone",
+      "Name": "IPhone",
+      "Purchase Price": "300",
+      "Quantity": "7",
+      "Sale Price": "130"
+    }
+  ]
+}
